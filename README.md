@@ -23,8 +23,9 @@ CORS enabled for easy local development
 1️⃣ Clone the repository
 bash
 Copy code
-git clone https://github.com/yourusername/ai-code-generator.git
+git clone https://github.com/aps4934/AI_powered_code_generator
 cd ai-code-generator
+
 2️⃣ Install dependencies
 bash
 Copy code
