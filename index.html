@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 500px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        pre {
+            background: #0e1117;
+            color: #00ff7f;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Code Generator</h1>
+        <textarea id="prompt" placeholder="Enter your code request..."></textarea>
+        <select id="language">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="Go">Go</option>
+        </select>
+        <button id="generateBtn">Generate Code</button>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        document.getElementById("generateBtn").addEventListener("click", async () => {
+            const prompt = document.getElementById("prompt").value.trim();
+            const language = document.getElementById("language").value;
+            const output = document.getElementById("output");
+
+            output.innerText = "Generating code... please wait.";
+
+            if (!prompt) {
+                output.innerText = "Error: Please enter a prompt.";
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:8000/generate-code", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ prompt, language })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.code) {
+                    output.innerText = data.code;
+                } else {
+                    output.innerText = `Error: ${data.error || "Unknown error from server"}`;
+                }
+            } catch (err) {
+                output.innerText = `Error: ${err.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
