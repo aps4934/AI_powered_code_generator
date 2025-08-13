@@ -20,6 +20,7 @@ Simple REST API for integration with any frontend
 CORS enabled for easy local development
 
 🛠️ Setup Instructions
+
 1️⃣ Clone the repository
 bash
 Copy code
@@ -30,6 +31,7 @@ cd ai-code-generator
 bash
 Copy code
 pip install -r requirements.txt
+
 3️⃣ Set up environment variables
 Copy .env.example to .env and add your OpenAI API key:
 
@@ -41,6 +43,8 @@ Edit .env:
 ini
 Copy code
 OPENAI_API_KEY=sk-your-key-here
+
+
 4️⃣ Run the backend
 bash
 Copy code
