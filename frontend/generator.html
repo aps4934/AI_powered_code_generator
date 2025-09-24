@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Generator - Generate Code</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>AI Code Generator</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="generator.html" class="nav-link cta-nav active">Generate Code</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Generator Section -->
+    <section class="generator-section">
+        <div class="generator-container">
+            <div class="generator-card">
+                <h1>AI Code Generation</h1>
+                <p>Enter your code requirements below and select a programming language to generate custom code instantly.</p>
+
+                <form id="codeForm">
+                    <div class="form-group">
+                        <label for="language">Select Programming Language</label>
+                        <select id="language" name="language" required>
+                            <option value="">Choose a language...</option>
+                            <option value="python">Python</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="c">C</option>
+                            <option value="csharp">C#</option>
+                            <option value="php">PHP</option>
+                            <option value="ruby">Ruby</option>
+                            <option value="go">Go</option>
+                            <option value="rust">Rust</option>
+                            <option value="swift">Swift</option>
+                            <option value="kotlin">Kotlin</option>
+                            <option value="typescript">TypeScript</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="sql">SQL</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requirement">Enter Code Requirement</label>
+                        <textarea
+                            id="requirement"
+                            name="requirement"
+                            placeholder="e.g., Create a function to calculate the sum of two numbers&#10;Or: Build a simple calculator&#10;Or: Write a function to reverse a string"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="generate-btn">
+                        <i class="fas fa-magic"></i> Generate Code
+                    </button>
+                </form>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading-card">
+                <div class="spinner"></div>
+                <p>AI is generating your code...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="result" class="result-card">
+                <div class="result-header">
+                    <h2><i class="fas fa-file-code"></i> Generated Code</h2>
+                    <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                        <i class="fas fa-copy"></i> Copy Code
+                    </button>
+                </div>
+                <div class="code-container">
+                    <pre id="generatedCode" class="code-display"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Code copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
