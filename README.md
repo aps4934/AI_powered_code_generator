@@ -22,7 +22,7 @@ An AI-powered web application that generates code based on natural language requ
 
 1. Clone the repository:
    ```bash
-   git clone [<repository-url>](https://github.com/aps4934/AI_powered_code_generator)
+   git clone https://github.com/aps4934/AI_powered_code_generator
    cd ai-powered-code-generator
    ```
 
@@ -107,4 +107,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 © 2024 Aditya Pratap Singh & Team | Built with Flask and Google Gemini AI
+
 
