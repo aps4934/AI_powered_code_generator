@@ -79,7 +79,9 @@ ai-powered-code-generator/
   - Email: sadityapratap070@gmail.com
 
 - **Achhansh Gupta** (AI/ML Engineer)
-  - Role: AI/ML Engineer
+  - GitHub: 
+  - LinkedIn: https://www.linkedin.com/in/achhansh-gupta-37440b35b/
+  - Email: 2k22csaiml32331@gmail.com
 
 - **Anupam Kumar Jha** (Backend Developer)
   - GitHub: https://github.com/Anupam-20
@@ -107,5 +109,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 © 2024 Aditya Pratap Singh & Team | Built with Flask and Google Gemini AI
+
 
 
