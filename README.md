@@ -55,7 +55,7 @@ An AI-powered web application that generates code based on natural language requ
    - **Root Directory**: Leave blank or set to root if needed
 
 5. Add environment variables:
-   - `GOOGLE_API_KEY`: Your Google Gemini API key (e.g., `AIzaSyBgBd78e9Zt8AjKAHRvaF4bsj0__sqV8ZY`)
+   - `GOOGLE_API_KEY`: Your Google Gemini API key (e.g., `xxxxxxxxxx`)
 
 6. Deploy the service. Render will build and deploy your application automatically.
 
