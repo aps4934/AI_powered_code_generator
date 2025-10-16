@@ -1,6 +1,6 @@
-﻿# AI Powered Code Generator
+# AI Powered Code Generator
 
-An AI-powered web application that generates code based on natural language requirements. Built with Flask for the backend and HTML/CSS/JavaScript for the frontend, this tool leverages simple rule-based logic to create code snippets in various programming languages.
+An AI-powered web application that generates code based on natural language requirements. Built with Flask for the backend and HTML/CSS/JavaScript for the frontend, this tool leverages Google Gemini AI to create code snippets in various programming languages.
 
 ## Features
 
@@ -15,7 +15,7 @@ An AI-powered web application that generates code based on natural language requ
 
 - **Backend**: Python, Flask
 - **Frontend**: HTML, CSS, JavaScript
-- **Code Generation**: Custom rule-based system
+- **Code Generation**: Google Gemini AI
 - **Styling**: Font Awesome for icons
 
 ## Installation
@@ -39,6 +39,27 @@ An AI-powered web application that generates code based on natural language requ
    ```
 
 4. Open your browser and go to `http://localhost:5000` to access the frontend.
+
+## Deployment on Render
+
+1. Create a new account on [Render](https://render.com) if you don't have one.
+
+2. Connect your GitHub repository to Render.
+
+3. Create a new Web Service from your repository.
+
+4. Configure the service:
+   - **Runtime**: Python 3
+   - **Build Command**: `pip install -r backend/requirements.txt`
+   - **Start Command**: `python run.py`
+   - **Root Directory**: Leave blank or set to root if needed
+
+5. Add environment variables:
+   - `GOOGLE_API_KEY`: Your Google Gemini API key (e.g., `AIzaSyBgBd78e9Zt8AjKAHRvaF4bsj0__sqV8ZY`)
+
+6. Deploy the service. Render will build and deploy your application automatically.
+
+7. Once deployed, access your application at the provided URL (e.g., `https://your-app-name.onrender.com`).
 
 ## Usage
 
