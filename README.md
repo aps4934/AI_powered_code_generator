@@ -1,3 +1,4 @@
+
 # AI Powered Code Generator
 
 An AI-powered web application that generates code based on natural language requirements. Built with Flask for the backend and HTML/CSS/JavaScript for the frontend, this tool leverages Google Gemini AI to create code snippets in various programming languages.
@@ -26,11 +27,9 @@ An AI-powered web application that generates code based on natural language requ
    cd ai-powered-code-generator
    ```
 
-2. Navigate to the backend directory and install dependencies:
+2. Install dependencies:
    ```bash
-   cd backend
    pip install -r requirements.txt
-   cd ..
    ```
 
 3. Start the backend server:
@@ -50,12 +49,12 @@ An AI-powered web application that generates code based on natural language requ
 
 4. Configure the service:
    - **Runtime**: Python 3
-   - **Build Command**: `pip install -r backend/requirements.txt`
+   - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `python run.py`
    - **Root Directory**: Leave blank or set to root if needed
 
 5. Add environment variables:
-   - `GOOGLE_API_KEY`: Your Google Gemini API key (e.g., `xxxxxxxxxx`)
+   - `GOOGLE_API_KEY`: Your Google Gemini API key
 
 6. Deploy the service. Render will build and deploy your application automatically.
 
