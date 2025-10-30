@@ -24,3 +24,10 @@
 - [x] Test sum of two numbers generation (now working with improved frontend)
 - [x] Test language selection feature (generate code in different languages)
 - [x] Test navigation between landing page and generator page
+- [x] Test generator.html page (interface loads correctly)
+- [x] Test script.js loading and functionality
+- [x] Test /generate API endpoint with valid requests (Python, JavaScript, Java)
+- [x] Test error handling for empty requirement
+- [x] Test error handling for empty language
+- [x] Test error handling for invalid language (still generates code but may not be accurate)
+- [x] Test homepage loading and navigation links

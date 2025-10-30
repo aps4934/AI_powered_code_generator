@@ -9,6 +9,10 @@ CORS(app)  # Enable CORS for all routes
 def serve_frontend():
     return send_from_directory('../frontend', 'index.html')
 
+@app.route('/index.html', methods=['GET'])
+def serve_index():
+    return send_from_directory('../frontend', 'index.html')
+
 @app.route('/generator.html', methods=['GET'])
 def serve_generator():
     return send_from_directory('../frontend', 'generator.html')

@@ -22,7 +22,15 @@ def generate_code(requirement, language="python"):
         response = model.generate_content(prompt)
         code = response.text.strip()
 
-        # Return clean code without markdown formatting
+        # Clean up markdown formatting if present
+        if code.startswith('```') and code.endswith('```'):
+            # Remove the first line if it contains language identifier
+            lines = code.split('\n')
+            if len(lines) > 1 and lines[0].startswith('```'):
+                lines = lines[1:]
+            if lines and lines[-1].startswith('```'):
+                lines = lines[:-1]
+            code = '\n'.join(lines).strip()
 
         return code
     except Exception as e:
