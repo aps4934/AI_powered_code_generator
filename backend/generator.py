@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
 # Set up the API key
-API_KEY = "AIzaSyD69AlWbU9hqtDBF_Mle8GT_tEYtBtdUHU"
+API_KEY = "AIzaSyBgBd78e9Zt8AjKAHRvaF4bsj0__sqV8ZY"
 genai.configure(api_key=API_KEY)
 
 def generate_code(requirement, language="python"):
@@ -16,7 +16,7 @@ def generate_code(requirement, language="python"):
         str: Generated code or error message
     """
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.0-flash-exp')
         prompt = f"Generate {language} code for the following requirement: {requirement}. Provide only the code without any explanations or markdown formatting. Include comments for clarity if needed."
 
         response = model.generate_content(prompt)
