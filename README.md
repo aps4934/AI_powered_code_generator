@@ -1,6 +1,8 @@
 ﻿
 # AI Powered Code Generator
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Project-blue)](https://ai-powered-code-generator-4.onrender.com/)
+
 An AI-powered web application that generates code based on natural language requirements. Built with Flask for the backend and HTML/CSS/JavaScript for the frontend, this tool leverages Google Gemini AI to create code snippets in various programming languages.
 
 ## Features
