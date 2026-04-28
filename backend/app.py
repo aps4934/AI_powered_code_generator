@@ -30,6 +30,7 @@ def generate():
     data = request.get_json()
     requirement = data.get('requirement', '')
     language = data.get('language', 'python')
+    model = data.get('model', 'gemini-3.0-flash')
 
     if not requirement:
         return jsonify({'error': 'Requirement is required'}), 400
@@ -37,7 +38,7 @@ def generate():
     if not language:
         return jsonify({'error': 'Language is required'}), 400
 
-    generated_code = generate_code(requirement, language)
+    generated_code = generate_code(requirement, language, model)
     return jsonify({'generated_code': generated_code})
 
 if __name__ == '__main__':

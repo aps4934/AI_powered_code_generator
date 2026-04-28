@@ -1,10 +1,12 @@
 import google.generativeai as genai
 
+import os
+
 # Set up the API key
-API_KEY = "AIzaSyBgBd78e9Zt8AjKAHRvaF4bsj0__sqV8ZY"
+API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyC0q9Ok8xMb7oUI-JPDR7_HSUgkif4Kj1w")
 genai.configure(api_key=API_KEY)
 
-def generate_code(requirement, language="python"):
+def generate_code(requirement, language="python", model_name="gemini-3.0-flash"):
     """
     Generates code based on user requirements using Google Gemini AI.
 
@@ -16,7 +18,7 @@ def generate_code(requirement, language="python"):
         str: Generated code or error message
     """
     try:
-        model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        model = genai.GenerativeModel(model_name)
         prompt = f"Generate {language} code for the following requirement: {requirement}. Provide only the code without any explanations or markdown formatting. Include comments for clarity if needed."
 
         response = model.generate_content(prompt)

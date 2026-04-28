@@ -5,11 +5,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const generatedCodeDiv = document.getElementById('generatedCode');
     const copyBtn = document.getElementById('copyBtn');
     const toast = document.getElementById('toast');
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Theme handling
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (themeToggle) {
+            themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+    }
 
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
         const language = document.getElementById('language').value;
+        const model = document.getElementById('model').value;
         const requirement = document.getElementById('requirement').value.trim();
 
         if (!language) {
@@ -32,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ requirement: requirement, language: language }),
+                body: JSON.stringify({ requirement: requirement, language: language, model: model }),
             });
 
             const data = await response.json();
