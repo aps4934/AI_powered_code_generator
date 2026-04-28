@@ -3,7 +3,7 @@ import google.generativeai as genai
 import os
 
 # Set up the API key
-API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyC0q9Ok8xMb7oUI-JPDR7_HSUgkif4Kj1w")
+API_KEY = os.getenv("GOOGLE_API_KEY", "YOUR_API_KEY")
 genai.configure(api_key=API_KEY)
 
 def generate_code(requirement, language="python", model_name="gemini-3.0-flash"):
