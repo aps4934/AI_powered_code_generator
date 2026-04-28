@@ -1,4 +1,4 @@
-﻿
+
 # AI Powered Code Generator
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Project-blue)](https://ai-powered-code-generator-4.onrender.com/)
@@ -39,7 +39,7 @@ An AI-powered web application that generates code based on natural language requ
 
 3. Install dependencies:
    ```bash
-   pip install -r backend/requirements.txt
+   pip install -r requirements.txt
    ```
 
 4. Start the backend server:
@@ -59,7 +59,7 @@ An AI-powered web application that generates code based on natural language requ
 
 4. Configure the service:
    - **Runtime**: Python 3
-   - **Build Command**: `pip install -r backend/requirements.txt`
+   - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `python run.py`
    - **Root Directory**: Leave blank or set to root if needed
 
